@@ -1,2 +1,2 @@
-# jico-s-tail-website
-jico's tail website
+# jico-s-tail
+video game web for jico's tail 

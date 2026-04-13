@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jico Tail’s — A cozy 2D pixel-art farming simulator starring Jico the cat.">
+    <title>Jico Tail’s • Cozy Pixel Farm Sim</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='82' font-size='85'%3E%F0%9F%90%B1%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        .pixel-font {
+            font-family: 'Press Start 2P', system-ui;
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #f8f1e3 0%, #d1fae5 100%);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mascot {
+            image-rendering: pixelated;
+            width: 280px;
+            max-width: 100%;
+            filter: drop-shadow(0 20px 30px rgb(0 0 0 / 0.3));
+            transition: transform 0.4s ease;
+        }
+
+        .mascot:hover {
+            transform: scale(1.08) rotate(4deg);
+        }
+
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgb(16 185 129 / 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-emerald-950">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/95 backdrop-blur-md border-b border-emerald-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="./banner_opensea.png" alt="LoopZ Logo" class="logo-container h-12 w-auto">
+                <div>
+                    <h1 class="pixel-font text-3xl tracking-widest text-emerald-950">JICO TAIL’S</h1>
+                    <p class="text-xs text-emerald-600 -mt-1">by LoopZ</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#features" class="nav-link">FEATURES</a>
+                <a href="#gallery" class="nav-link">GALLERY</a>
+                <a href="#trailers" class="nav-link">TRAILERS</a>
+                <a href="#team" class="nav-link">TEAM</a>
+                <a href="#community" class="nav-link">COMMUNITY</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://x.com/lopezartyy" target="_blank" class="flex items-center gap-2 bg-emerald-100 hover:bg-emerald-200 px-5 py-2.5 rounded-2xl text-sm font-medium transition-colors">
+                    <span class="text-xl">𝕏</span>
+                    <span>@lopezartyy</span>
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-3xl text-emerald-800">☰</button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 py-8">
+            <div class="flex flex-col gap-6 text-center text-lg font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+                <a href="#features" onclick="toggleMobileMenu()" class="nav-link">Features</a>
+                <a href="#gallery" onclick="toggleMobileMenu()" class="nav-link">Gallery</a>
+                <a href="#trailers" onclick="toggleMobileMenu()" class="nav-link">Trailers</a>
+                <a href="#team" onclick="toggleMobileMenu()" class="nav-link">Team</a>
+                <a href="#community" onclick="toggleMobileMenu()" class="nav-link">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO with your custom pixel mascot -->
+    <header class="hero-bg min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between mb-16">
+                <div class="flex items-center gap-6">
+                    <img src="./banner_opensea.png" alt="LoopZ Logo" class="logo-container h-16 w-auto">
+                    <div>
+                        <h1 class="pixel-font text-5xl md:text-6xl tracking-widest text-emerald-950">JICO TAIL’S</h1>
+                        <p class="text-emerald-600 text-lg">by LoopZ</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right mt-6 md:mt-0">
+                    <p class="text-2xl text-emerald-700">A cozy 2D pixel farm sim</p>
+                    <p class="text-emerald-600">Plant • Harvest • Relax with Jico the cat</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-10">
+                    <div class="inline-flex items-center gap-3 bg-emerald-100 px-6 py-3 rounded-3xl text-emerald-700 text-sm font-medium">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        SOLO INDIE DEVELOPMENT
+                    </div>
+
+                    <h2 class="pixel-font text-5xl md:text-[54px] leading-none tracking-[-2px] font-bold text-emerald-950">
+                        Restore a forgotten farm.<br>
+                        Live the cozy life<br>
+                        as Jico.
+                    </h2>
+
+                    <div class="flex flex-wrap gap-5">
+                        <button onclick="alert('🌾 Wishlist feature coming soon! Follow @lopezartyy on X for updates.')"
+                                class="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-6 rounded-3xl text-xl font-medium flex items-center gap-3 transition-all active:scale-95">
+                            WISHLIST ON STEAM
+                            <span class="text-3xl">🌱</span>
+                        </button>
+
+                        <a href="#features" class="border-4 border-emerald-800 hover:bg-emerald-800 hover:text-white px-10 py-6 rounded-3xl text-xl font-medium transition-all active:scale-95">
+                            SEE FEATURES
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center items-center">
+                    <img src="./mascot.png" alt="Jico the Cat" class="mascot">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-7">
+                    <h2 class="pixel-font text-5xl font-bold leading-tight mb-8">A peaceful pixel farming life</h2>
+                    <p class="text-xl text-emerald-700 max-w-lg">
+                        Play as Jico the cat and bring a forgotten farm back to life. Grow crops, befriend villagers, raise animals, and enjoy the simple joys of farm life in beautiful hand-crafted pixel art.
+                    </p>
+                    <p class="mt-6 text-xl text-emerald-700">
+                        Inspired by Stardew Valley • Made solo by @lopezartyy
+                    </p>
+                </div>
+
+                <div class="md:col-span-5">
+                    <div class="video-container bg-emerald-950 rounded-3xl overflow-hidden">
+                        <video controls class="w-full">
+                            <source src="./video_game.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="text-center text-emerald-500 text-sm mt-4">Recent Dev Update • Animation Test</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAILERS -->
+    <section id="trailers" class="py-24 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="pixel-font text-5xl font-bold text-center mb-12">Game Trailers</h2>
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/v9xknwWdawc" title="Game Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center text-emerald-600 font-medium mt-4">Game Demo</p>
+                </div>
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/oLVIiSbcyqU" title="Test Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center text-emerald-600 font-medium mt-4">Test Trailer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR TEAM SECTION - Side by Side -->
+    <section id="team" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="pixel-font text-5xl font-bold text-center mb-16">Our Team</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white border-4 border-emerald-900 rounded-3xl overflow-hidden text-center p-8">
+                    <img src="./raden-naufal.png" 
+                         alt="Raden Naufal Tuasikal" 
+                         class="w-48 h-48 mx-auto rounded-2xl object-cover mb-6 border-4 border-emerald-800">
+                    
+                    <h3 class="text-2xl font-bold mb-1">Raden Naufal Tuasikal</h3>
+                    <p class="text-emerald-600 mb-6">Programmer and Pixel Artist</p>
+                    
+                    <a href="https://www.linkedin.com/in/raden-naufal-tuasikal-11aa84209" 
+                       target="_blank"
+                       class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all">
+                        View LinkedIn Profile
+                        <span class="text-xl">↗</span>
+                    </a>
+                </div>
+
+                <!-- Team Member 2 (Julian) -->
+                <div class="team-card bg-white border-4 border-emerald-900 rounded-3xl overflow-hidden text-center p-8">
+                    <img src="./julian.png" 
+                         alt="Julian Naufal Azzam" 
+                         class="w-48 h-48 mx-auto rounded-2xl object-cover mb-6 border-4 border-emerald-800">
+                    
+                    <h3 class="text-2xl font-bold mb-1">Julian Naufal Azzam</h3>
+                    <p class="text-emerald-600 mb-6">Co-Developer and Contributor</p>
+                    
+                    <a href="#" 
+                       target="_blank"
+                       class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all">
+                        View LinkedIn Profile
+                        <span class="text-xl">↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="text-center text-emerald-500 mt-12 text-sm">
+                A passionate indie team creating cozy pixel games
+            </p>
+        </div>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="pixel-font text-5xl font-bold text-center mb-16">Cozy Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 hover:shadow-xl transition-shadow text-center">
+                    <div class="text-6xl mb-6">🌱</div>
+                    <h3 class="text-2xl font-semibold mb-3">Farming & Seasons</h3>
+                    <p class="text-emerald-600">Plant, water, and harvest in a living seasonal world.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 hover:shadow-xl transition-shadow text-center">
+                    <div class="text-6xl mb-6">🐾</div>
+                    <h3 class="text-2xl font-semibold mb-3">Friendships</h3>
+                    <p class="text-emerald-600">Build relationships and unlock heart events with villagers.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 hover:shadow-xl transition-shadow text-center">
+                    <div class="text-6xl mb-6">🏠</div>
+                    <h3 class="text-2xl font-semibold mb-3">Farm Customization</h3>
+                    <p class="text-emerald-600">Decorate and build your dream cozy farm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="pixel-font text-5xl font-bold mb-12 text-center">Ingame Screenshots</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group">
+                    <div class="bg-gradient-to-br from-emerald-100 to-amber-100 border-4 border-emerald-900 rounded-3xl overflow-hidden transition-all hover:scale-105">
+                        <img src="./image1.png" alt="Screenshot 1" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 border-4 border-emerald-900 rounded-3xl overflow-hidden transition-all hover:scale-105">
+                        <img src="./image2.png" alt="Screenshot 2" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="bg-gradient-to-br from-emerald-100 to-teal-100 border-4 border-emerald-900 rounded-3xl overflow-hidden transition-all hover:scale-105">
+                        <img src="./image3.png" alt="Screenshot 3" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-emerald-500 mt-12 text-sm">
+                More screenshots and dev videos every week on @lopezartyy
+            </p>
+        </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community" class="py-24 bg-emerald-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-7xl mb-8">🐱</div>
+            <h2 class="pixel-font text-5xl font-bold mb-6">Join Jico’s Journey</h2>
+            <p class="text-xl text-emerald-200 max-w-md mx-auto">
+                Follow the solo developer for weekly pixel devlogs, behind-the-scenes, and early updates.
+            </p>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-6">
+                <a href="https://x.com/lopezartyy" target="_blank" class="inline-flex items-center gap-4 bg-white text-emerald-950 px-10 py-6 rounded-3xl text-xl font-medium hover:scale-105 transition-transform">
+                    <span class="text-4xl">𝕏</span>
+                    FOLLOW @lopezartyy
+                </a>
+
+                <a href="https://www.instagram.com/lopezartyy" target="_blank" class="inline-flex items-center gap-4 bg-gradient-to-br from-[#f56040] via-[#c13584] to-[#405de6] text-white px-10 py-6 rounded-3xl text-xl font-medium hover:scale-105 transition-transform shadow-lg">
+                    <img src="./instagram-logo.png" alt="Instagram" class="w-9 h-9 object-contain">
+                    Instagram
+                </a>
+
+                <a href="https://www.tiktok.com/@lopezartyy0" target="_blank" class="inline-flex items-center gap-4 bg-black text-white px-10 py-6 rounded-3xl text-xl font-medium hover:scale-105 transition-transform shadow-lg">
+                    <img src="./tiktok-logo.png" alt="TikTok" class="w-12 h-12 object-contain">
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="./banner_opensea.png" alt="LoopZ Logo" class="mx-auto h-12 mb-6 opacity-90">
+            <p class="text-sm">Jico Tail’s • Cozy Pixel Farm Sim by LoopZ Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
