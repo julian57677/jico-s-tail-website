@@ -92,10 +92,6 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <a href="https://x.com/lopezartyy" target="_blank" class="flex items-center gap-2 bg-emerald-100 hover:bg-emerald-200 px-5 py-2.5 rounded-2xl text-sm font-medium transition-colors">
-                    <span class="text-xl">𝕏</span>
-                    <span>@lopezartyy</span>
-                </a>
                 <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-3xl text-emerald-800">☰</button>
             </div>
         </div>
@@ -149,8 +145,7 @@
                             <span class="text-3xl">🌱</span>
                         </button>
 
-                        <a href="#features" 
-                           class="border-4 border-emerald-800 hover:bg-emerald-800 hover:text-white px-10 py-6 rounded-3xl text-xl font-medium transition-all active:scale-95">
+                        <a href="#features" class="border-4 border-emerald-800 hover:bg-emerald-800 hover:text-white px-10 py-6 rounded-3xl text-xl font-medium transition-all active:scale-95">
                             SEE FEATURES
                         </a>
                     </div>
@@ -189,73 +184,90 @@
         </div>
     </section>
 
-    <!-- TRAILERS - Updated with your new links -->
+     <!-- TRAILERS - FIXED with correct embed links -->
     <section id="trailers" class="py-24 bg-emerald-50">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="pixel-font text-5xl font-bold text-center mb-12">Game Trailers</h2>
-            
             <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <!-- First Trailer -->
                 <div>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/E6B0w9Svoo0" 
-                                title="Game Trailer 1" 
+                                title="Game Demo" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen></iframe>
                     </div>
-                    <p class="text-center text-emerald-600 font-medium mt-4">Game demo</p>
+                    <p class="text-center text-emerald-600 font-medium mt-4">Game Demo</p>
                 </div>
-
-                <!-- Second Trailer -->
                 <div>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/BhTeL16-Hy4" 
-                                title="Game Trailer 2" 
+                                title="Test Trailer" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen></iframe>
                     </div>
-                    <p class="text-center text-emerald-600 font-medium mt-4">Game Trailer</p>
+                    <p class="text-center text-emerald-600 font-medium mt-4">Test Trailer</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OUR TEAM -->
+    <!-- OUR TEAM - Matching your boss's requested format -->
     <section id="team" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="pixel-font text-5xl font-bold text-center mb-16">Our Team</h2>
+            <h2 class="pixel-font text-5xl font-bold text-center mb-16">Founder</h2>
             
-            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <!-- Naufal Card -->
+            <div class="max-w-md mx-auto mb-16">
                 <div class="team-card bg-white border-4 border-emerald-900 rounded-3xl overflow-hidden text-center p-8">
                     <img src="./raden-naufal.png" 
-                         alt="Naufal Tuasikal" 
-                         class="w-48 h-48 mx-auto rounded-2xl object-cover mb-6 border-4 border-emerald-800">
+                        alt="Naufal Tuasikal" 
+                        class="w-48 h-48 mx-auto rounded-2xl object-cover mb-6 border-4 border-emerald-800">
+                    
                     <h3 class="text-2xl font-bold mb-2">Naufal Tuasikal</h3>
                     <p class="text-emerald-600 mb-8">Founder & Game Developer</p>
-                    <a href="https://www.linkedin.com/in/raden-naufal-tuasikal-11aa84209" target="_blank"
-                       class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all">
-                        View LinkedIn Profile
-                        <span class="text-xl">↗</span>
-                    </a>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/raden-naufal-tuasikal-11aa84209" 
+                        target="_blank"
+                        class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all flex-1 justify-center">
+                            LinkedIn
+                            <span class="text-xl">↗</span>
+                        </a>
+                        
+                        <!-- Instagram Button -->
+                        <a href="https://www.instagram.com/nauffl" 
+                        target="_blank"
+                        class="inline-flex items-center gap-3 bg-gradient-to-br from-[#f56040] via-[#c13584] to-[#405de6] text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all flex-1 justify-center">
+                            Instagram
+                            <span class="text-xl">↗</span>
+                        </a>
+                    </div>
                 </div>
+            </div>
 
+            <!-- "Team" heading + Julian Card -->
+            <h3 class="pixel-font text-4xl font-bold text-center mb-8">Team</h3>
+            
+            <div class="max-w-md mx-auto">
                 <div class="team-card bg-white border-4 border-emerald-900 rounded-3xl overflow-hidden text-center p-8">
                     <img src="./julian.png" 
                          alt="Julian Naufal Azzam" 
                          class="w-48 h-48 mx-auto rounded-2xl object-cover mb-6 border-4 border-emerald-800">
-                    <h3 class="text-2xl font-bold mb-2">Julian Naufal Azzam</h3>
+                    <h3 class="text-2xl font-bold mb-2">Julian Azzam</h3>
                     <p class="text-emerald-600 mb-8">Web Developer (website & platform support)</p>
-                    <a href="https://www.linkedin.com/in/julian-naufal-azzam-1340b1283/" target="_blank"
+                    <a href="https://www.linkedin.com/in/julian-naufal-azzam-1340b1283/" 
+                       target="_blank"
                        class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl text-lg font-medium transition-all">
-                        View LinkedIn Profile
+                        LinkedIn 
                         <span class="text-xl">↗</span>
                     </a>
                 </div>
             </div>
 
-            <p class="text-center text-emerald-500 mt-12 text-sm">
+            <p class="text-center text-emerald-500 mt-16 text-sm">
                 A passionate indie team creating cozy pixel games
             </p>
         </div>
